@@ -1,0 +1,25 @@
+<div class="container">
+<h1>All Trees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>DBH</th>
+    <th>Mass</th>
+    <th>CO2 Removed</th>
+    <th>Owner</th>
+  </tr>
+  <% @tree.each do |a| %>
+  <tr>
+    <td><%= link_to a.name, "/trees/#{a.id}", method: 'get' %></td>
+    <td><%= a.species %></td>
+    <td><%= a.diameter %> cm</td>
+    <td><%= a.mass %> kg</td>
+    <td><%= a.co2_removed %> ppm</td>
+    <td><%= a.user_id %></td>
+    <% end %>
+  </tr>
+</table>
+
+</div>
