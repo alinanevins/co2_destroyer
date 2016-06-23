@@ -1,25 +1,26 @@
 <div class="container">
-<h1>Add a New Tree</h1>
-<div class="row">
-  <%= form_for(@tree) do |f| %>
+  <h1>Add a New Tree</h1>
+
+  <div class="row">
+    <%= form_for(@tree) do |f| %>
     <div class="row">
       <div class="input-field col s6"><%= f.label :name %>
-      <%= f.text_field :name %><p/></div>
+        <%= f.text_field :name %><p/></div>
 
-      <div class="input-field col s6"><%= f.label :species %>
-      <%= f.text_field :species %><p/></div>
+        <div class="input-field col s6"><%= f.label :species %>
+          <%= f.text_field :species %><p/></div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <%= f.label :diameter, "Diameter (cm)" %>
+            <%= f.text_field :diameter %><p/></div>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit %></button>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="input-field col s6"><%= f.label :diameter %>
-        <%= f.text_field :diameter %><p/></div>
-
-        <div class="input-field col s6">
-        <%= f.label :user_id %>
-        <%= f.text_field :user_id %><p/></div>
-    </div>
-
-    <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit %></button>
-  <% end %>
   </div>
 </div>
- 

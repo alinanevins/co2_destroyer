@@ -11,10 +11,11 @@ before_action :authenticate_user!
     a.name = tree_hash['name']
     a.species = tree_hash['species']
     a.diameter = tree_hash['diameter']
+
     t = TreeService.new(a.diameter)
     a.mass = t.calculate_mass.round(2)
     a.co2_removed = t.calculate_co2.round(2)
-    a.user_id = tree_hash['user_id']
+    # a.user_id = tree_hash['user_id']
 
     if a.save
       redirect_to tree_path(a.id)
